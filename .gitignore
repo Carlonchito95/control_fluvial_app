@@ -1,0 +1,31 @@
+# Flutter related
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub/
+.pub-cache/
+build/
+**/ios/Flutter/.last_build_id
+
+# Platform specific builds
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# IDEs and editors
+.idea/
+*.iml
+*.log
+*.class
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.svn/
+
+# Symbolication and obfuscation
+app.*.symbols
+app.*.map.json
+
+# Optional - si NO quieres compartir configuraciones de VSCode
+# .vscode/
