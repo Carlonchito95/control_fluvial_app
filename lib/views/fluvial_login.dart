@@ -47,7 +47,7 @@ class _FluvialLoginState extends State<FluvialLogin> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset("assets/images/logo_munimaynas.png", scale: 1),
-              const SizedBox(height: 50),
+              const SizedBox(height: 49),
               TextFormField(
                 validator: FormValidator.validateNameUser,
                 controller: _userController,
