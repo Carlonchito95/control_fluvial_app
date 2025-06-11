@@ -20,7 +20,9 @@ class _FluvialLoginState extends State<FluvialLogin> {
     if (_formKey.currentState!.validate()) {
       Navigator.pushAndRemoveUntil(
         context,
-        MaterialPageRoute(builder: (context) => const FluvialHome()),
+        MaterialPageRoute(
+          builder: (context) => const FluvialHome(),
+        ),
         (Route<dynamic> route) => false,
       );
     }
