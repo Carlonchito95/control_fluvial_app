@@ -1,3 +1,4 @@
+import 'package:app_fluvial/views/fluvial_add_pasajero.dart';
 import 'package:app_fluvial/views/fluvial_login.dart';
 import 'package:flutter/material.dart';
 import './theme/app_theme.dart';
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
-      home: const FluvialLogin(),
+      // home: const FluvialLogin(),
+      home: const FluvialAddPasajero(),
     );
   }
 }

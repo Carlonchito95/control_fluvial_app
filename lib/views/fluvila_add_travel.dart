@@ -13,6 +13,8 @@ class _FluvilaAddTravelState extends State<FluvilaAddTravel> {
   String? pSalidaSeleccionado;
   String? pLlegadaSeleccionado;
 
+  final _cantidadDePasajeros = TextEditingController();
+
   Future<void> _showMyDialog() async {
     return showDialog<void>(
       context: context,
@@ -44,6 +46,23 @@ class _FluvilaAddTravelState extends State<FluvilaAddTravel> {
               _buildCardViaje(colors),
               const SizedBox(height: 20),
               _buildCardTripulacion(colors),
+              const SizedBox(
+                height: 20,
+              ),
+              Container(
+                width: double.infinity,
+                height: 200,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(color: Colors.grey),
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(15),
+                  ),
+                ),
+                child: const Center(
+                  child: Text('List Empty'),
+                ),
+              ),
             ],
           ),
         ),
@@ -83,6 +102,7 @@ class _FluvilaAddTravelState extends State<FluvilaAddTravel> {
               _buildLabel("Cantidad de pasajeros"),
               const SizedBox(height: 8),
               TextFormField(
+                controller: _cantidadDePasajeros,
                 keyboardType: TextInputType.number,
                 decoration: _inputDecoration("Ej: 15"),
               ),
