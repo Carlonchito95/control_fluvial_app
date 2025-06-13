@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: AppTheme.lightTheme,
-      darkTheme: AppTheme.darkTheme,
+      //darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
       // home: const FluvialLogin(),
       home: const FluvialAddPasajero(),

@@ -26,4 +26,11 @@ class FormValidator {
     }
     return null;
   }
+
+  static String? validateNumeroDeDoc(String? value) {
+    if (value == null || value.isEmpty) {
+      return "Numero de Documento Requerido";
+    }
+    return null;
+  }
 }
