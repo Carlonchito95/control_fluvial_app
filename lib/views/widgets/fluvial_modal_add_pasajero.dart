@@ -128,7 +128,7 @@ class _FluvialModalAddPasajeroState extends State<FluvialModalAddPasajero> {
                 height: 40,
                 child: TextFormField(
                   decoration: const InputDecoration(
-                    border: OutlineInputBorder(
+                    border: OutlineInputBorder(  
                       borderRadius: BorderRadius.all(
                         Radius.circular(15),
                       ),
