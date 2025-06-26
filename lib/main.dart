@@ -3,6 +3,7 @@ import 'package:app_fluvial/views/fluvial_list_pasajeros.dart';
 import 'package:app_fluvial/views/fluvial_login.dart';
 import 'package:app_fluvial/views/fluvial_panel_viajes.dart';
 import 'package:app_fluvial/views/fluvial_register_reports.dart';
+import 'package:app_fluvial/views/fluvila_add_travel.dart';
 import 'package:flutter/material.dart';
 import './theme/app_theme.dart';
 
@@ -23,10 +24,11 @@ class MyApp extends StatelessWidget {
       //darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.system,
       // home: const FluvialLogin(),
-      // home: const FluvialAddPasajero(),
+      //home: const FluvialAddPasajero(),
       // home: const FluvialRegisterReports(),
       //home: const FluvialListPasajeros(),
-      home: const FluvialPanelViajes(),
+      // home: const FluvialPanelViajes(),
+      home: const FluvilaAddTravel(),
     );
   }
 }

@@ -20,6 +20,7 @@ class _FluvialAddPasajeroState extends State<FluvialAddPasajero> {
   String? docSeleccionado;
   String? subDestinoSeleccionado;
   String? docnSeleccionado;
+  int masInputLength = 8;
 
   final _nombresController = TextEditingController();
   final _apellidosController = TextEditingController();
@@ -84,6 +85,8 @@ class _FluvialAddPasajeroState extends State<FluvialAddPasajero> {
                 const SizedBox(height: 5),
                 DropdownButtonFormField(
                   decoration: const InputDecoration(
+                    contentPadding:
+                        EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                     labelText: 'Seleccionar',
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(15)),
@@ -99,6 +102,18 @@ class _FluvialAddPasajeroState extends State<FluvialAddPasajero> {
                   onChanged: (value) {
                     setState(() {
                       docSeleccionado = value;
+                      switch (value) {
+                        case 'DNI':
+                          masInputLength = 8;
+                          break;
+                        case 'RUC':
+                          masInputLength = 11;
+                          break;
+                        case 'CE':
+                          masInputLength = 8;
+                          break;
+                        default:
+                      }
                     });
                   },
                 ),
@@ -114,9 +129,10 @@ class _FluvialAddPasajeroState extends State<FluvialAddPasajero> {
                   children: [
                     if ((docSeleccionado ?? '') != "No Tiene") ...[
                       SizedBox(
-                        height: 45,
+                        height: 60,
                         width: screenWidth * 0.5,
                         child: TextFormField(
+                          maxLength: masInputLength,
                           keyboardType: TextInputType.number,
                           decoration: const InputDecoration(
                             floatingLabelBehavior: FloatingLabelBehavior.never,
@@ -131,30 +147,33 @@ class _FluvialAddPasajeroState extends State<FluvialAddPasajero> {
                           ),
                         ),
                       ),
-                      SizedBox(
-                        width: screenWidth * 0.3,
-                        height: 45,
-                        child: ElevatedButton(
-                          style: ElevatedButton.styleFrom(
-                            elevation: 3,
-                            backgroundColor: colors.primary,
-                            shape: const RoundedRectangleBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(15)),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 15),
+                        child: SizedBox(
+                          width: screenWidth * 0.3,
+                          height: 40,
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              elevation: 3,
+                              backgroundColor: colors.primary,
+                              shape: const RoundedRectangleBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(15)),
+                              ),
                             ),
-                          ),
-                          onPressed: () {},
-                          child: Text(
-                            'Validar',
-                            style: TextStyle(
-                                color: colors.onPrimary, fontSize: 17),
+                            onPressed: () {},
+                            child: Text(
+                              'Validar',
+                              style: TextStyle(
+                                  color: colors.onPrimary, fontSize: 17),
+                            ),
                           ),
                         ),
                       ),
                     ],
                   ],
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
 
                 // Mostrar si el docSeleccionado es distinto de "No Tiene"
                 if ((docSeleccionado ?? '') != "No Tiene") ...[
@@ -324,6 +343,7 @@ class _FluvialAddPasajeroState extends State<FluvialAddPasajero> {
                   const SizedBox(height: 5),
                   DropdownButtonFormField(
                     decoration: const InputDecoration(
+                      contentPadding: EdgeInsets.all(10),
                       labelText: 'Seleccionar Sub Destino',
                       labelStyle: TextStyle(color: Colors.grey),
                       border: OutlineInputBorder(
